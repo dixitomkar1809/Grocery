@@ -1,0 +1,14 @@
+<ActionBar title="Groceries"></ActionBar>
+<FlexboxLayout>
+	<StackLayout class="form" [class.dark]="!isLoggingIn">
+		<Image src="~/images/logo.png"></Image>
+		<TextField  class="input input-border" [(ngModel)]="user.email" hint="Email Address" 
+		keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+		<TextField  class="input input-border" hint="Password" secure="true" 
+		[(ngModel)]="user.password"></TextField>
+		<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="btn btn-primary"
+		 (tap)="submit()"></Button>
+		<Button [text]="isLoggingIn ? 'Sign up' : 'Back to Login'" (tap)="toggleDisplay()">
+		</Button>
+	</StackLayout>
+</FlexboxLayout>
